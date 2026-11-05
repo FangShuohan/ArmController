@@ -1,0 +1,256 @@
+{
+  "model": {
+    "joints": [
+      {
+        "motor_id": 1,
+        "axis_xyz": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "axis_point_m": [
+          0.0,
+          0.0,
+          0.07
+        ],
+        "lower": 0.0,
+        "upper": 170.0,
+        "joint_type": "hinge",
+        "gear_ratio": 1.0,
+        "direction": 1,
+        "zero_deg": 0.0,
+        "screw_lead_m": null,
+        "uncertainty": 0.5,
+        "tolerance_deg": 0.3,
+        "stopped_deg_s": 0.1,
+        "name": "大臂俯仰"
+      },
+      {
+        "motor_id": 2,
+        "axis_xyz": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "axis_point_m": [
+          0.43,
+          0.0,
+          0.07
+        ],
+        "lower": 0.0,
+        "upper": 0.266,
+        "joint_type": "slide",
+        "gear_ratio": 1.0,
+        "direction": 1,
+        "zero_deg": 0.0,
+        "screw_lead_m": 0.082,
+        "uncertainty": 0.001,
+        "tolerance_deg": 0.3,
+        "stopped_deg_s": 0.1,
+        "name": "小臂伸缩"
+      },
+      {
+        "motor_id": 3,
+        "axis_xyz": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "axis_point_m": [
+          0.543,
+          0.0,
+          0.07
+        ],
+        "lower": -360.0,
+        "upper": 360.0,
+        "joint_type": "hinge",
+        "gear_ratio": 1.0,
+        "direction": 1,
+        "zero_deg": 0.0,
+        "screw_lead_m": null,
+        "uncertainty": 0.5,
+        "tolerance_deg": 0.3,
+        "stopped_deg_s": 0.1,
+        "name": "末端相对俯仰"
+      },
+      {
+        "motor_id": 4,
+        "axis_xyz": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "axis_point_m": [
+          0.543,
+          0.0,
+          0.07
+        ],
+        "lower": -360.0,
+        "upper": 360.0,
+        "joint_type": "hinge",
+        "gear_ratio": 1.0,
+        "direction": 1,
+        "zero_deg": 0.0,
+        "screw_lead_m": null,
+        "uncertainty": 0.5,
+        "tolerance_deg": 0.3,
+        "stopped_deg_s": 0.1,
+        "name": "吸盘自转"
+      }
+    ],
+    "tool_position_m": [
+      0.6080000000000001,
+      0.0,
+      0.07
+    ],
+    "tool_quaternion_xyzw": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "capsules": [
+      {
+        "name": "upper",
+        "joint_count": 1,
+        "start": [
+          0.0,
+          0.0,
+          0.07
+        ],
+        "end": [
+          0.43,
+          0.0,
+          0.07
+        ],
+        "radius": 0.025
+      },
+      {
+        "name": "slider",
+        "joint_count": 2,
+        "start": [
+          0.37,
+          0.0,
+          0.07
+        ],
+        "end": [
+          0.543,
+          0.0,
+          0.07
+        ],
+        "radius": 0.02
+      },
+      {
+        "name": "wrist",
+        "joint_count": 3,
+        "start": [
+          0.543,
+          0.0,
+          0.07
+        ],
+        "end": [
+          0.543,
+          0.0,
+          0.07
+        ],
+        "radius": 0.025
+      },
+      {
+        "name": "tool",
+        "joint_count": 4,
+        "start": [
+          0.543,
+          0.0,
+          0.07
+        ],
+        "end": [
+          0.6080000000000001,
+          0.0,
+          0.07
+        ],
+        "radius": 0.015
+      }
+    ],
+    "allowed_pairs": [
+      [
+        "slider",
+        "tool"
+      ],
+      [
+        "slider",
+        "upper"
+      ],
+      [
+        "slider",
+        "wrist"
+      ],
+      [
+        "tool",
+        "wrist"
+      ]
+    ],
+    "safety_margin_m": 0.003,
+    "motor_coupling": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0,
+        2.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        2.0
+      ]
+    ],
+    "motor_bounds_deg": [
+      [
+        -359.0,
+        359.0
+      ],
+      [
+        0.0,
+        2250.0
+      ],
+      [
+        -700.0,
+        700.0
+      ],
+      [
+        -700.0,
+        700.0
+      ]
+    ]
+  },
+  "uart": {
+    "channel_motor_ids": [
+      3,
+      4,
+      1,
+      2
+    ],
+    "baudrate": 115200
+  },
+  "control": {
+    "motor_pair_preference": {
+      "motor_ids": [
+        3,
+        4
+      ],
+      "tolerance_deg": 0.001
+    }
+  }
+}
