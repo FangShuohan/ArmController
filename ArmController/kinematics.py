@@ -8,7 +8,7 @@
 import numpy as np
 from scipy.linalg import expm
 
-import modern_robotics as mr
+from ModernRobotics.packages.Python import modern_robotics as mr
 
 from .geometry import Pose
 from .validation import finite_matrix, finite_vector, rigid_transform, unit_vectors, validate_joint_types

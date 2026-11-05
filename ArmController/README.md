@@ -1,12 +1,12 @@
 # ArmController：通用串联机械臂工具
 
-本目录只放与具体机械臂、仿真和通信无关的算法。内部单位为位置 m、旋转关节 rad、伸缩关节 m，四元数顺序 xyzw。依赖 NumPy、SciPy 和通过 pip 安装的 ModernRobotics（Python 3.10+）：
+本目录只放与具体机械臂、仿真和通信无关的算法。内部单位为位置 m、旋转关节 rad、伸缩关节 m，四元数顺序 xyzw。依赖 NumPy、SciPy 和仓库内的 ModernRobotics（Python 3.10+）：
 
 ```bash
-python -m pip install numpy scipy modern_robotics
+python -m pip install numpy scipy
 ```
 
-ModernRobotics 是 NxRLab 的第三方库，采用 [MIT 许可证](https://github.com/NxRLab/ModernRobotics/blob/master/LICENSE)（Copyright (c) 2019 NxRLab）。本仓库通过依赖使用它，不包含其源代码。
+ModernRobotics 是 NxRLab 的第三方库（Copyright (c) 2019 NxRLab），源码随仓库保存在 [ModernRobotics](../ModernRobotics/) 目录；完整 [MIT 许可证](../ModernRobotics/LICENSE) 和原版权声明均原样保留。直接克隆本仓库即可使用，无需单独 pip 安装 modern_robotics 或初始化子模块。来源和版本见 [第三方声明](../THIRD_PARTY_NOTICES.md)。
 
 ## 逐文件审查结果
 

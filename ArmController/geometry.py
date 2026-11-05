@@ -9,7 +9,7 @@ from dataclasses import dataclass
 import numpy as np
 from scipy.spatial.transform import Rotation
 
-import modern_robotics as mr
+from ModernRobotics.packages.Python import modern_robotics as mr
 
 from .validation import finite_vector, rigid_transform
 

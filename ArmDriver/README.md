@@ -13,11 +13,11 @@ git clone https://github.com/FangShuohan/ArmController.git
 cd ArmController
 conda create -n robotic_arm python=3.11 -y
 conda activate robotic_arm
-python -m pip install numpy scipy matplotlib pyserial modern_robotics
+python -m pip install numpy scipy matplotlib pyserial
 python -B -m ArmDriver
 ```
 
-Python 需要 3.10 或更新版本。ModernRobotics 通过 pip 安装，本仓库不包含其源代码；项目及许可证见 [NxRLab/ModernRobotics](https://github.com/NxRLab/ModernRobotics)（MIT，Copyright (c) 2019 NxRLab）。
+Python 需要 3.10 或更新版本。ModernRobotics 源码已包含在仓库的 [ModernRobotics](../ModernRobotics/) 目录中，无需单独安装或初始化子模块。它由 NxRLab 开发（Copyright (c) 2019 NxRLab），完整 [MIT 许可证](../ModernRobotics/LICENSE) 和原版权声明均原样保留；来源和版本见 [第三方声明](../THIRD_PARTY_NOTICES.md)。
 
 Tk 使用 Anaconda 自带版本；若缺少 tkinter，在该环境执行 `conda install tk`。也能直接运行 `python -B ArmDriver/debug_gui.py`。打开其他配置使用：
 
